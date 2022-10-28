@@ -1,5 +1,16 @@
+import { useDispatch } from 'react-redux';
+
+import { startChangingAuthView } from "../../store/auth/";
 
 export const SignUpBox = () => {
+
+    const dispatch = useDispatch();
+
+    const onChangeAuthPage = () => {
+
+        dispatch( startChangingAuthView() );
+
+    };
 
     return (
 
@@ -24,7 +35,7 @@ export const SignUpBox = () => {
 
             </form>
 
-            <p className="new-visitor mt-3">¿Ya tienes cuenta? <a href="" className="change-state-link">Iniciar Sesión</a> </p>
+            <p className="new-visitor mt-3">¿Ya tienes cuenta? <span className="change-state-link" onClick={ onChangeAuthPage }>Iniciar Sesión</span> </p>
 
         </div>
 

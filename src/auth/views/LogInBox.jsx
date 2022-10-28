@@ -1,6 +1,17 @@
+import { useDispatch } from 'react-redux';
+import { startChangingAuthView } from '../../store/auth/';
+
 import '../styles/loginBox.css';
 
 export const LogInBox = () => {
+
+    const dispatch = useDispatch();
+
+    const changeAuthView = () => {
+
+        dispatch( startChangingAuthView() );
+
+    };
 
     return (
 
@@ -19,7 +30,7 @@ export const LogInBox = () => {
 
             </form>
 
-            <p className="new-visitor mt-5">¿Eres un nuevo visitante? <a href="" className="change-state-link">¡Crea una cuenta!</a> </p>
+            <p className="new-visitor mt-5">¿Eres un nuevo visitante? <span className="change-state-link" onClick={ changeAuthView }>¡Crea una cuenta!</span> </p>
 
         </div>
 

@@ -6,11 +6,11 @@ export const authSlice = createSlice({
         isLoginView: true
     },
     reducers: {
-        increment: ( state ) => {
-            state.counter += 1;
+        onChangeAuthView: ( state ) => {
+            state.isLoginView = !state.isLoginView;
         },
     }
 });
 
 
-export const { increment } = authSlice.actions;
+export const { onChangeAuthView } = authSlice.actions;

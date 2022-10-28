@@ -54,3 +54,8 @@
 .new-visitor{
     font-size: .8rem;
 }
+
+.change-state-link{
+    color: blue;
+    cursor: pointer;
+}
