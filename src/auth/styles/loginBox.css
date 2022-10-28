@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap');
+
+*{
+    font-family: 'Comfortaa', cursive;
+}
+
+.auth-form-box{
+    background-color: #f8f7ff;
+    width: 350px;
+    height: 500px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.bi{
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+.app-title{
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+}
+
+.form-input{
+    background-color: rgb(235, 235, 235);
+    width: 85%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
+
+.form-input:focus{
+    outline: none;
+}
+
+.auth-btn{
+    background-color: #015596;
+    color: white;
+    width: 85%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    transition: 0.3s all ease-out;
+}
+
+.auth-btn:hover{
+    background-color: #004070;
+}
+
+.new-visitor{
+    font-size: .8rem;
+}
