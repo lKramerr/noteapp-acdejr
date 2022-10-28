@@ -15,7 +15,7 @@ export const LogInBox = () => {
 
                 <input type="text" placeholder="email" name="email" className="form-input mb-4 mt-2"/>
                 <input type="password" placeholder="contraseña123" name="password" className="form-input mb-4"/>
-                <button class="mb-2 auth-btn">Iniciar Sesión</button>
+                <button className="mb-2 auth-btn">Iniciar Sesión</button>
 
             </form>
 
