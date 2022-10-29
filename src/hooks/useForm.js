@@ -31,7 +31,7 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
             const [ fn, errorMessage = 'error de validación' ] = formValidations[ formField ];
 
             formCheckedValues[ `${ formField }Valid` ] = fn( formState[ formField ] ) ? null : errorMessage
-        }
+        };
 
         setValidationsState( formCheckedValues );
 
@@ -43,6 +43,7 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
         onInputChange,
 
         ...validationsState,
-    }
+        validationsState,
+    };
 
 };

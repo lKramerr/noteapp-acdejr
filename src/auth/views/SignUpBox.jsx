@@ -6,33 +6,27 @@ import { useForm } from '../../hooks/useForm';
 import { signUpFormState } from '../states';
 import { signUpValidations } from '../states';
 
-import { callErrorAlert } from './alerts/error';
+import { checkValidationsForUserSignUp } from '../states/formValidations/checkValidations';
 
 export const SignUpBox = () => {
 
     const dispatch = useDispatch();
 
-    const { onInputChange, formState, isFormValid, 
+    const { onInputChange, formState, validationsState, 
             email, password, passwordRepeat,
-            emailValid, passwordValid, passwordRepeatValid,
+            emailValid, passwordValid,
         } = useForm( signUpFormState, signUpValidations );
 
     const onChangeAuthPage = () => dispatch( startChangingAuthView() );
 
     const printFormData = ( event ) => {
+
         event.preventDefault();
+        
+        validationsState.passwordRepeat = ( password === passwordRepeat ) ? null : 'Las contraseñas no coinciden';
+        checkValidationsForUserSignUp( validationsState, formState );
 
-        if( password !== passwordRepeat ) {
-            callErrorAlert( 'Las contraseñas no coinciden' );
-            return;
-        };
-
-        if( !!emailValid ) callErrorAlert( emailValid );
-        if( !!passwordValid ) callErrorAlert( passwordValid );
-
-        console.log( !emailValid, !passwordValid )
-        console.log( formState );
-    }
+    };
 
     return (
 
@@ -51,7 +45,7 @@ export const SignUpBox = () => {
                     type="text"
                     placeholder="Correo electrónico"
                     name="email"
-                    value={ email }
+                    value={ email || "" }
                     onChange={ onInputChange }
                     autoComplete="off"
                     className="form-input mb-3"
@@ -61,7 +55,7 @@ export const SignUpBox = () => {
                     type="password"
                     placeholder="Contraseña"
                     name="password"
-                    value={ password }
+                    value={ password || "" }
                     onChange={ onInputChange }
                     autoComplete="off"
                     className="form-input mb-3"
@@ -71,13 +65,17 @@ export const SignUpBox = () => {
                     type="password"
                     placeholder="Repetir Contraseña"
                     name="passwordRepeat"
-                    value={ passwordRepeat }
+                    value={ passwordRepeat || "" }
                     onChange={ onInputChange }
                     autoComplete="off"
                     className="form-input mb-3"
                 />
 
-                <input type="submit" className="auth-btn mb-1" value="Crear cuenta" />
+                <input
+                    type="submit"
+                    value="Crear cuenta"
+                    className="auth-btn mb-1" 
+                />
 
             </form>
 
