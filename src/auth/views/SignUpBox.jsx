@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { startChangingAuthView } from "../../store/auth/";
+import { startChangingAuthView, startCreatingUserWithEmailAndPassword } from "../../store/auth/";
 import { useForm } from '../../hooks/useForm';
 
 import { signUpFormState } from '../states';
@@ -19,12 +19,15 @@ export const SignUpBox = () => {
 
     const onChangeAuthPage = () => dispatch( startChangingAuthView() );
 
-    const printFormData = ( event ) => {
+    const onCreateNewUser = ( event ) => {
 
         event.preventDefault();
         
         validationsState.passwordRepeat = ( password === passwordRepeat ) ? null : 'Las contraseñas no coinciden';
-        checkValidationsForUserSignUp( validationsState, formState );
+
+        const ok = checkValidationsForUserSignUp( validationsState, formState );
+
+        if ( ok ) dispatch( startCreatingUserWithEmailAndPassword( formState ) );
 
     };
 
@@ -37,7 +40,7 @@ export const SignUpBox = () => {
             <p className="app-title mb-0 mt-2">noteapp</p>
             <p className="app-subtitle">¡Únete!</p>
 
-            <form method="post" onSubmit={ printFormData }>
+            <form method="post" onSubmit={ onCreateNewUser }>
 
                 {/* <input type="text" placeholder="Nombre de Usuario" name="username" autoComplete="off" className="form-input mb-2"/> */}
 

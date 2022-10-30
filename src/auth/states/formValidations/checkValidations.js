@@ -9,10 +9,11 @@ export const checkValidationsForUserSignUp = ( validations, formState ) => {
         if ( validation ) {
             canSignUpUser = false;
             callErrorAlert( validation );
-        }
+        };
 
     };
 
-    if ( canSignUpUser ) console.log( formState );
+    if ( canSignUpUser ) return true;
+    if ( !canSignUpUser ) return false;
 
 };

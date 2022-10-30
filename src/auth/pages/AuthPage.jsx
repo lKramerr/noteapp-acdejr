@@ -13,11 +13,11 @@ export const AuthPage = () => {
 
         <div className=" d-flex vh-100 vw-100 justify-content-center align-items-center auth-page ">
         
-        {
-            ( !isLoginView )
-                ? <SignUpBox />
-                : <LogInBox/>
-        }
+            {
+                ( !isLoginView )
+                    ? <SignUpBox />
+                    : <LogInBox/>
+            }
         
         </div>
 
