@@ -6,7 +6,6 @@ export const registerUserWithEmailAndPassword = async( { email, password } ) => 
     try {
 
         const resp = await createUserWithEmailAndPassword( FirebaseAuth, email, password );
-        console.log( resp );
         const { uid } = resp.user;
     
         return {
@@ -16,11 +15,9 @@ export const registerUserWithEmailAndPassword = async( { email, password } ) => 
         
     } catch ( error ) {
 
-        console.log( error );
-
         return {
             ok: false,
-            error
+            errorMessage: error.message,
         };
 
     };

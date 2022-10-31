@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { startChangingAuthView, startCreatingUserWithEmailAndPassword } from "../../store/auth/";
 import { useForm } from '../../hooks/useForm';
@@ -7,17 +7,28 @@ import { signUpFormState } from '../states';
 import { signUpValidations } from '../states';
 
 import { checkValidationsForUserSignUp } from '../states/formValidations/checkValidations';
+import { useEffect } from 'react';
+import { checkFirebaseErrors } from '../states/firebaseErrors/checkFirebaseErrors';
 
 export const SignUpBox = () => {
 
     const dispatch = useDispatch();
 
-    const { onInputChange, formState, validationsState, 
+    const { errorMessage, loginAttempts } = useSelector( state => state.auth );
+
+    const { onInputChange, onResetForm, formState, validationsState, 
             email, password, passwordRepeat,
             emailValid, passwordValid,
         } = useForm( signUpFormState, signUpValidations );
 
     const onChangeAuthPage = () => dispatch( startChangingAuthView() );
+
+    useEffect( () => {
+
+        checkFirebaseErrors( errorMessage );
+        onResetForm();
+
+    }, [ loginAttempts ] );
 
     const onCreateNewUser = ( event ) => {
 

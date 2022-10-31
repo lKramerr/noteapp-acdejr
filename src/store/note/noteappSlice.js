@@ -7,7 +7,7 @@ export const noteappSlice = createSlice({
         email: '',
     },
     reducers: {
-        onLogin: ( state, { payload } ) => {
+        increment: ( state, { payload } ) => {
             uid: '';
             state.email = payload.email;
         },
@@ -15,4 +15,4 @@ export const noteappSlice = createSlice({
 });
 
 
-export const { onLogin } = noteappSlice.actions;
+export const { increment } = noteappSlice.actions;

@@ -23,6 +23,12 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
 
     };
 
+    const onResetForm = () => {
+
+        setFormState( { ...formState, passwordRepeat: '' } );
+
+    };
+
     const createValidators = () => {
 
         const formCheckedValues = {};
@@ -41,6 +47,7 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
         ...formState,
         formState,
         onInputChange,
+        onResetForm,
 
         ...validationsState,
         validationsState,

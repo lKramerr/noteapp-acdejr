@@ -1,6 +1,6 @@
 import { callErrorAlert } from "../../views/alerts/error";
 
-export const checkValidationsForUserSignUp = ( validations, formState ) => {
+export const checkValidationsForUserSignUp = ( validations ) => {
 
     let canSignUpUser = true;
 
