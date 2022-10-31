@@ -1,10 +1,11 @@
-import { async } from "@firebase/util";
+import { signOut } from "firebase/auth";
+import { FirebaseAuth } from "../../firebase/config";
 import { registerUserWithEmailAndPassword } from "../../firebase/providers";
-import { onChangeAuthView, onLogin, onLogout } from "./authSlice";
+import { changeAuthView, login, logout } from "./authSlice";
 
 export const startChangingAuthView = () => {
 
-    return async( dispatch ) => dispatch( onChangeAuthView() );
+    return async( dispatch ) => dispatch( changeAuthView() );
 
 };
 
@@ -14,10 +15,19 @@ export const startCreatingUserWithEmailAndPassword = ( formState ) => {
 
         const { ok, uid, email, errorMessage } = await( registerUserWithEmailAndPassword( formState ) );
 
-        if ( !ok ) return dispatch( onLogout( { errorMessage } ) );
+        if ( !ok ) return dispatch( logout( { errorMessage } ) );
 
-        dispatch( onLogin( { uid, email } ) );
+        dispatch( login( { uid, email } ) );
 
     };
+
+};
+
+export const startLogout = () => {
+
+    return async( dispatch ) => {
+        await signOut( FirebaseAuth );
+        dispatch( logout() );
+    }
 
 };

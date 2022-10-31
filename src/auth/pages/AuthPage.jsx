@@ -11,7 +11,7 @@ export const AuthPage = () => {
 
     return (
 
-        <div className=" d-flex vh-100 vw-100 justify-content-center align-items-center auth-page ">
+        <div className="d-flex vh-100 vw-100 justify-content-center align-items-center auth-page">
         
             {
                 ( !isLoginView )
