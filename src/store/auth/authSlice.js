@@ -18,14 +18,14 @@ export const authSlice = createSlice({
         checkingCredentials: ( state ) => {
             state.status = 'checking';
         },
-        login: ( state, { payload } ) => {
+        logIn: ( state, { payload } ) => {
             state.status = 'authenticated';
             state.uid = payload.uid;
             state.email = payload.email;
             state.loginAttempts = 0;
             state.errorMessage = null;
         },
-        logout: ( state, { payload = '' } ) => {
+        logOut: ( state, { payload = '' } ) => {
             state.status = 'not-authenticated';
             state.uid = null;
             state.email = null;
@@ -36,4 +36,4 @@ export const authSlice = createSlice({
 });
 
 
-export const { changeAuthView, login, logout, checkingCredentials } = authSlice.actions;
+export const { changeAuthView, logIn, logOut, checkingCredentials } = authSlice.actions;

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { startLogout } from "../../store/auth";
+import { startLogOut } from "../../store/auth";
 
 export const Home = () => {
 
@@ -8,7 +8,7 @@ export const Home = () => {
 
     const onLogout = () => {
 
-        dispatch( startLogout() );
+        dispatch( startLogOut() );
 
     };
 

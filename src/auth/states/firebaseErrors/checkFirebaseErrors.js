@@ -6,4 +6,12 @@ export const checkFirebaseErrors = ( errorMessage ) => {
         callErrorAlert( 'Este email ya fue registrado' );
     };
 
+    if ( errorMessage === 'Firebase: Error (auth/wrong-password).' ) {
+        callErrorAlert( 'Contraseña incorrecta' );
+    };
+    
+    if ( errorMessage === 'Firebase: Error (auth/invalid-email).' ) {
+        callErrorAlert( 'Este usuario no está registrado' );
+    };
+
 };
