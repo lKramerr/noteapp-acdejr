@@ -37,20 +37,6 @@
     outline: none;
 }
 
-.auth-btn{
-    background-color: #015596;
-    color: white;
-    width: 85%;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    transition: 0.3s all ease-out;
-}
-
-.auth-btn:hover{
-    background-color: #004070;
-}
-
 .new-visitor{
     font-size: .8rem;
 }

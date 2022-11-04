@@ -1,0 +1,21 @@
+.page-background{
+    background-color: #3A86FF;
+}
+
+.action-btn{
+    background-color: #3A86FF;
+    color: white;
+    width: 85%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    transition: 0.3s all ease-out;
+}
+
+.action-btn:hover{
+    background-color: #326ecf;
+}
+
+i{
+    cursor: pointer;
+}

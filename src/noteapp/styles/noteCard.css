@@ -1,0 +1,31 @@
+
+.note-card{
+    background-color: transparent;
+    color: black;
+    width: 200px;
+    padding: 15px;
+    border: 1px black solid;
+    border-radius: 15px;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.3s all ease-out;
+}
+
+.note-card:hover{
+    background-color: #2c69ca;
+    color: #FFFFFF;
+    border: 1px #2c69ca solid;
+}
+
+.note-title{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.note-body{
+    font-size: .9rem;
+}
+
+.create-note-btn{
+    width: 100%;
+}

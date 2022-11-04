@@ -1,24 +1,23 @@
-import { useDispatch, useSelector } from "react-redux";
-import { startLogOut } from "../../store/auth";
+import { NotesHandler } from "../components";
+import { CreateNote } from "../views/CreateNote";
+
+import '../styles/noteCard.css';
+import '../styles/home.css';
 
 export const Home = () => {
 
-    const { email } = useSelector( state => state.auth );
-    const dispatch = useDispatch();
-
-    const onLogout = () => {
-
-        dispatch( startLogOut() );
-
-    };
 
     return (
-        <>
+        <div className="page-background vh-100 d-md-flex align-items-md-center">
         
-            <h1>Welcome Aboard, { email }!</h1>
-            <button className="btn btn-danger" onClick={ onLogout }>Log out</button>
+            <div className="container p-4 notes-container">
+
+                <NotesHandler />
+                {/* <CreateNote /> */}
+
+            </div>
         
-        </>
+        </div>
     )
 
 };

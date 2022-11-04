@@ -59,7 +59,7 @@ export const LogInBox = () => {
                     className="form-input mb-4"
                 />
 
-                <button className="mb-2 auth-btn" >
+                <button className="mb-2 action-btn" >
                     Iniciar Sesión
                 </button>
 

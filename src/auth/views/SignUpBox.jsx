@@ -88,7 +88,7 @@ export const SignUpBox = () => {
                 <input
                     type="submit"
                     value="Crear cuenta"
-                    className="auth-btn mb-1" 
+                    className="action-btn mb-1" 
                 />
 
             </form>
