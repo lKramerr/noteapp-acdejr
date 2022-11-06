@@ -3,16 +3,24 @@ import { createSlice } from '@reduxjs/toolkit';
 export const noteappSlice = createSlice({
     name: 'noteapp',
     initialState: {
-        uid: '',
-        email: '',
+        isSaving: false,
+        isOnHomePage: true,
+        messageSaved: '',
+        notes: [],
+        active: null,
     },
     reducers: {
-        increment: ( state, { payload } ) => {
-            uid: '';
-            state.email = payload.email;
+        changeHomeView: ( state ) => {
+            state.isOnHomePage = !state.isOnHomePage;
         },
+        savingNote: ( state ) => {
+            state.isSaving = true;
+        },
+        noteSaved: ( state ) => {
+            state.isSaving = false;
+        }
     }
 });
 
 
-export const { increment } = noteappSlice.actions;
+export const { changeHomeView, savingNote, noteSaved } = noteappSlice.actions;

@@ -1,10 +1,17 @@
 import { useDispatch } from "react-redux";
 import { startLogOut } from "../../store/auth";
+import { startChangingHomeView } from "../../store/note/thunks";
 import { NoteCard } from "./";
 
 export const NotesHandler = () => {
 
     const dispatch = useDispatch();
+
+    const onChangeHomeView = () => {
+
+        dispatch( startChangingHomeView() );
+
+    };
 
     
     const onLogout = () => {
@@ -15,7 +22,7 @@ export const NotesHandler = () => {
 
     return (
 
-        <>
+        <div>
 
             <i
                 className="bi bi-box-arrow-left fs-4"
@@ -23,7 +30,7 @@ export const NotesHandler = () => {
             ></i>
         
             <div className="d-flex justify-content-center">
-                <button className="action-btn create-note-btn">+ Crear</button>
+                <button className="action-btn create-note-btn" onClick={ onChangeHomeView }>+ Crear</button>
             </div>
         
             <div
@@ -35,14 +42,10 @@ export const NotesHandler = () => {
             >
                 <NoteCard />
                 <NoteCard />
-                <NoteCard />
-                <NoteCard />
-                <NoteCard />
-                <NoteCard />
-                <NoteCard />
+
             </div>
 
-        </>
+        </div>
 
     );
 

@@ -1,23 +1,36 @@
 import { NotesHandler } from "../components";
-import { CreateNote } from "../views/CreateNote";
+import { NoteWorkshop } from "../views/NoteWorkshop";
 
 import '../styles/noteCard.css';
 import '../styles/home.css';
+import { useSelector } from "react-redux";
 
 export const Home = () => {
 
+    const { isOnHomePage } = useSelector( state => state.noteapp );
 
     return (
-        <div className="page-background vh-100 d-md-flex align-items-md-center">
+
+        <div className="page-background py-4">
         
             <div className="container p-4 notes-container">
 
-                <NotesHandler />
-                {/* <CreateNote /> */}
+                <div className="">
+
+                    {
+                        ( isOnHomePage )
+                        ? <NotesHandler/>
+                        : <NoteWorkshop />
+                    }
+
+                    
+                    
+                </div>
 
             </div>
         
         </div>
-    )
+
+    );
 
 };
