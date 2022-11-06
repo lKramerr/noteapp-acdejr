@@ -11,25 +11,15 @@ export const Home = () => {
 
     return (
 
-        <div className="page-background py-4">
+        <>
         
-            <div className="container p-4 notes-container">
-
-                <div className="">
-
-                    {
-                        ( isOnHomePage )
-                        ? <NotesHandler/>
-                        : <NoteWorkshop />
-                    }
-
-                    
-                    
-                </div>
-
-            </div>
+            {
+                ( isOnHomePage )
+                    ? <NotesHandler/>
+                    : <NoteWorkshop />
+            }
         
-        </div>
+        </>
 
     );
 

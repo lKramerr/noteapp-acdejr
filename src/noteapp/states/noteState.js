@@ -1,5 +1,6 @@
 
 export const noteState = {
     title: '',
-    body: ''
+    body: '',
+    color: 'purple',
 };

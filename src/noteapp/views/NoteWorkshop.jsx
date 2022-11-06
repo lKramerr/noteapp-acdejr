@@ -9,7 +9,22 @@ export const NoteWorkshop = () => {
 
     const dispatch = useDispatch();
     const { isSaving } = useSelector( state => state.noteapp );
-    const { onInputChange, formState, title, body } = useForm( noteState );
+    const { onInputChange, formState, setFormState, title, body, color } = useForm( noteState );
+
+    let displayColor = 'purple';
+    
+    const onChangePinkColor = ( event ) => {
+        
+        const backgroundColor = event.target.style.backgroundColor;
+
+        setFormState( { ...formState, color: backgroundColor } );
+
+    };
+
+    if ( color === 'rgb(131, 56, 236)' ) displayColor = 'purple';
+    if ( color === 'rgb(255, 0, 110)' ) displayColor = 'pink';
+    if ( color === 'rgb(251, 86, 7)' ) displayColor = 'orange';
+    if ( color === 'rgb(243, 19, 19)' ) displayColor = 'red';
 
     const onChangeHomeView = () => {
 
@@ -28,7 +43,7 @@ export const NoteWorkshop = () => {
 
     return (
 
-        <div className="create-notes-container">
+        <div className="create-notes-container w-75 mt-4">
 
             <div className="d-flex justify-content-between mb-2">
 
@@ -37,35 +52,40 @@ export const NoteWorkshop = () => {
 
             </div>
         
-            <form onSubmit={ onSendNote } method="post">
-                <input
-                    type="text"
-                    name="title"
-                    value={ title }
-                    onChange={ onInputChange }
-                    placeholder="Título"
-                    className="note-form note-title"
-                />
+            <input
+                type="text"
+                name="title"
+                value={ title }
+                onChange={ onInputChange }
+                placeholder="Título"
+                className="note-form note-title"
+            />
 
-                <textarea
-                    type="text"
-                    name="body"
-                    value={ body }
-                    onChange={ onInputChange }
-                    placeholder="Entonces..."
-                    className="note-form"
-                    rows={ 16 }
-                />
+            <textarea
+                type="text"
+                name="body"
+                value={ body }
+                onChange={ onInputChange }
+                placeholder="Entonces..."
+                className="note-form"
+                rows={ 16 }
+            />
 
-                <button
-                    className="action-btn save-note"
-                    disabled={ isSaving }
-                    onClick={ onSendNote }
-                >
-                    Guardar
-                </button>
-            </form>
-        
+            <div>
+                <button className="color-btn" name="purple" style={ { backgroundColor: '#8338EC' } } onClick={ onChangePinkColor }></button>
+                <button className="color-btn" name="pink" style={ { backgroundColor: '#FF006E' } } onClick={ onChangePinkColor }></button>
+                <button className="color-btn" name="orange" style={ { backgroundColor: '#FB5607' } } onClick={ onChangePinkColor }></button>
+                <button className="color-btn" name="red" style={ { backgroundColor: '#F31313' } } onClick={ onChangePinkColor }></button>
+            </div>
+
+            <button
+                className={ "action-btn save-note " + displayColor }
+                disabled={ isSaving }
+                onClick={ onSendNote }
+            >
+                Guardar
+            </button>
+
         </div>
 
     );

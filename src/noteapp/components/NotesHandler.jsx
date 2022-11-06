@@ -24,24 +24,48 @@ export const NotesHandler = () => {
 
         <div>
 
-            <i
-                className="bi bi-box-arrow-left fs-4"
-                onClick={ onLogout }
-            ></i>
-        
-            <div className="d-flex justify-content-center">
-                <button className="action-btn create-note-btn" onClick={ onChangeHomeView }>+ Crear</button>
+            <div className="d-flex bg-light py-2 px-4 justify-content-between align-items-center sticky-top">
+
+                <button
+                    className="secondary-btn sign-out-btn"
+                    onClick={ onLogout }
+                >
+                    Salir
+                </button>
+                
+                <button
+                    className="action-btn create-note-btn"
+                    onClick={ onChangeHomeView }
+                >
+                    + Crear
+                </button>
+
             </div>
-        
-            <div
-                className=" row
-                            row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5
-                            g-2 g-lg-3
-                            mt-1
-                            justify-content-center"
-            >
-                <NoteCard />
-                <NoteCard />
+
+            <div className="container mb-4">
+
+                <div
+                    className=" row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5
+                                g-2 g-lg-3
+                                mt-1"
+                >
+                    
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+                    <NoteCard />
+
+                </div>
 
             </div>
 

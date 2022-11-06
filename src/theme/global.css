@@ -16,6 +16,21 @@ body{
     background-color: #326ecf;
 }
 
+.secondary-btn{
+    background-color: transparent;
+    color: black;
+    border: 1px black solid;
+    border-radius: 15px;
+    height: 40px;
+    transition: 0.3s all ease-out;
+}
+
+.secondary-btn:hover{
+    background-color: black;
+    color: white;
+
+}
+
 i{
     cursor: pointer;
 }

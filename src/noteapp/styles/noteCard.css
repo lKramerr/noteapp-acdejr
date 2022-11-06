@@ -1,31 +1,44 @@
 
 .note-card{
-    background-color: transparent;
-    color: black;
-    width: 200px;
+    color: white;
+    width: 190px;
+    height: 240px;
     padding: 15px;
-    border: 1px black solid;
-    border-radius: 15px;
+    border-radius: 10px;
     margin: auto;
     cursor: pointer;
     transition: 0.3s all ease-out;
 }
 
 .note-card:hover{
-    background-color: #2c69ca;
-    color: #FFFFFF;
-    border: 1px #2c69ca solid;
+    transform: scale(110%);
 }
+
+/* 
+
+    Background colors:
+        #8338EC
+        #FF006E
+        #FB5607
+        #F31313
+
+*/
 
 .note-title{
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .note-body{
-    font-size: .9rem;
+    font-size: .8rem;
 }
 
 .create-note-btn{
-    width: 100%;
+    width: 150px;
+    height: 40px;
+}
+
+.sign-out-btn{
+    width: 120px;
+    height: 30px;
 }

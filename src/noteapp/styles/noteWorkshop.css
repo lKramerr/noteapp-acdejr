@@ -1,7 +1,12 @@
 .create-notes-container{
 
-    padding-top: 15px;
-    padding-bottom: 8px;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    background-color: white;
 
 }
 
@@ -22,3 +27,44 @@
 .save-note{
     width: 100%;
 }
+
+.color-btn{
+    margin-left: 100px;
+    margin: 10px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s all ease-out;
+}
+
+.color-btn:active{
+    transform: scale( 80% );
+}
+
+
+.purple{
+    background-color: #8338EC;
+}
+
+.pink{
+    background-color: #FF006E;
+}
+
+.orange{
+    background-color: #FB5607;
+}
+
+.red{
+    background-color: #F31313;
+}
+
+/* 
+
+    Background colors:
+        #8338EC
+        #FF006E
+        #FB5607
+        #F31313
+
+*/
