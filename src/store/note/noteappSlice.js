@@ -18,9 +18,12 @@ export const noteappSlice = createSlice({
         },
         noteSaved: ( state ) => {
             state.isSaving = false;
-        }
+        },
+        setNotes: ( state, { payload } ) => {
+            state.notes = payload;
+        },
     }
 });
 
 
-export const { changeHomeView, savingNote, noteSaved } = noteappSlice.actions;
+export const { changeHomeView, savingNote, noteSaved, setNotes } = noteappSlice.actions;

@@ -1,19 +1,22 @@
+import { colorsHandler } from "../../helpers/colorsHandler";
 
 
-export const NoteCard = () => {
+export const NoteCard = ( { title, body, color } ) => {
+
+    const displayColor = colorsHandler( color );
 
     return (
 
         <div className="col mt-4">
         
-            <div className="note-card purple">
+            <div className={ "note-card purple " + displayColor} >
 
                 <p className="note-title">
-                    Concierto de 31 minutos
+                    { title }
                 </p>
 
                 <p className="note-body">
-                    Comprar los boletos para el concierto de 31 minutos el 26 de Noviembre a las 8pm
+                    { body }
                 </p>
 
                 <p className="text-end pt-3">

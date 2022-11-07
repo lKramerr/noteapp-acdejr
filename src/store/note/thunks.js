@@ -1,7 +1,9 @@
-import { changeHomeView, noteSaved, savingNote } from './noteappSlice';
+import { changeHomeView, noteSaved, savingNote, setNotes } from './noteappSlice';
 import { doc, collection, setDoc } from 'firebase/firestore/lite';
 
 import { CloudFirebase } from '../../firebase/config';
+import { async } from '@firebase/util';
+import { loadNotes } from '../../helpers/loadNotes';
 
 export const startChangingHomeView = () => {
 
@@ -23,5 +25,26 @@ export const startCreatingNote = ( formState ) => {
         dispatch( noteSaved() );
 
     };
+
+};
+
+export const startLoadingNotes = () => {
+
+    return async( dispatch, getState ) => {
+
+        const { uid } = getState().auth;
+        const notes = await loadNotes( uid );
+
+        dispatch( setNotes( notes ) );
+
+    };
+
+};
+
+export const testThunk = () => {
+
+    return async() => ( 
+        console.log( 'despachado' )
+    );
 
 };

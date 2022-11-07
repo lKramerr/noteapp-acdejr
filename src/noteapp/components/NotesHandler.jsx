@@ -2,23 +2,18 @@ import { useDispatch } from "react-redux";
 import { startLogOut } from "../../store/auth";
 import { startChangingHomeView } from "../../store/note/thunks";
 import { NoteCard } from "./";
+import { useLoadNotes } from '../../hooks/useLoadNotes.js';
 
 export const NotesHandler = () => {
 
     const dispatch = useDispatch();
 
-    const onChangeHomeView = () => {
+    const onChangeHomeView = () => dispatch( startChangingHomeView() );
 
-        dispatch( startChangingHomeView() );
+    const onLogout = () => dispatch( startLogOut() );
 
-    };
-
-    
-    const onLogout = () => {
-
-        dispatch( startLogOut() );
-
-    };
+    const myNotes = useLoadNotes();
+    console.log( myNotes );
 
     return (
 
@@ -50,20 +45,9 @@ export const NotesHandler = () => {
                                 mt-1"
                 >
                     
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
-                    <NoteCard />
+                    {
+                        myNotes.map( note => <NoteCard key={ note.id } {...note} /> )
+                    }
 
                 </div>
 

@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { colorsHandler } from '../../helpers/colorsHandler';
 import { useForm } from '../../hooks';
 import { startChangingHomeView, startCreatingNote } from '../../store/note/thunks';
 import { noteState } from '../states/noteState';
@@ -11,7 +13,7 @@ export const NoteWorkshop = () => {
     const { isSaving } = useSelector( state => state.noteapp );
     const { onInputChange, formState, setFormState, title, body, color } = useForm( noteState );
 
-    let displayColor = 'purple';
+    const displayColor = colorsHandler( color ) ;
     
     const onChangePinkColor = ( event ) => {
         
@@ -21,10 +23,7 @@ export const NoteWorkshop = () => {
 
     };
 
-    if ( color === 'rgb(131, 56, 236)' ) displayColor = 'purple';
-    if ( color === 'rgb(255, 0, 110)' ) displayColor = 'pink';
-    if ( color === 'rgb(251, 86, 7)' ) displayColor = 'orange';
-    if ( color === 'rgb(243, 19, 19)' ) displayColor = 'red';
+    console.log( displayColor );
 
     const onChangeHomeView = () => {
 
