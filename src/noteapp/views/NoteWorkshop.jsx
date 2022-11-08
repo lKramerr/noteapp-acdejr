@@ -15,7 +15,7 @@ export const NoteWorkshop = () => {
 
     const displayColor = colorsHandler( color ) ;
     
-    const onChangePinkColor = ( event ) => {
+    const onChangeColor = ( event ) => {
         
         const backgroundColor = event.target.style.backgroundColor;
 
@@ -71,10 +71,10 @@ export const NoteWorkshop = () => {
             />
 
             <div>
-                <button className="color-btn" name="purple" style={ { backgroundColor: '#8338EC' } } onClick={ onChangePinkColor }></button>
-                <button className="color-btn" name="pink" style={ { backgroundColor: '#FF006E' } } onClick={ onChangePinkColor }></button>
-                <button className="color-btn" name="orange" style={ { backgroundColor: '#FB5607' } } onClick={ onChangePinkColor }></button>
-                <button className="color-btn" name="red" style={ { backgroundColor: '#F31313' } } onClick={ onChangePinkColor }></button>
+                <button className="color-btn" name="purple" style={ { backgroundColor: 'rgb(81, 17, 55)' } } onClick={ onChangeColor }></button>
+                <button className="color-btn" name="pink" style={ { backgroundColor: 'rgb(167, 48, 86)' } } onClick={ onChangeColor }></button>
+                <button className="color-btn" name="orange" style={ { backgroundColor: 'rgb(151, 61, 26)' } } onClick={ onChangeColor }></button>
+                <button className="color-btn" name="red" style={ { backgroundColor: 'rgb(75, 85, 86)' } } onClick={ onChangeColor }></button>
             </div>
 
             <button

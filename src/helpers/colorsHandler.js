@@ -3,9 +3,9 @@ export const colorsHandler = ( color = 'rgb(131, 56, 236)' ) => {
 
     let displayColor = '';
 
-    if ( color === 'rgb(131, 56, 236)' ) return displayColor = 'purple';
-    if ( color === 'rgb(255, 0, 110)' ) return displayColor = 'pink';
-    if ( color === 'rgb(251, 86, 7)' ) return displayColor = 'orange';
-    if ( color === 'rgb(243, 19, 19)' ) return displayColor = 'red';
+    if ( color === 'rgb(81, 17, 55)' ) return displayColor = 'purple';
+    if ( color === 'rgb(167, 48, 86)' ) return displayColor = 'pink';
+    if ( color === 'rgb(151, 61, 26)' ) return displayColor = 'orange';
+    if ( color === 'rgb(75, 85, 86)' ) return displayColor = 'gray';
 
 };

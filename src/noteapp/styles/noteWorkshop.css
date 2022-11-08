@@ -44,19 +44,19 @@
 
 
 .purple{
-    background-color: #8338EC;
+    background-color: rgb(81, 17, 55);
 }
 
 .pink{
-    background-color: #FF006E;
+    background-color: rgb(167, 48, 86);
 }
 
 .orange{
-    background-color: #FB5607;
+    background-color: rgb(151, 61, 26);
 }
 
-.red{
-    background-color: #F31313;
+.gray{
+    background-color: rgb(75, 85, 86);
 }
 
 /* 

@@ -16,19 +16,19 @@ export const useLoadNotes = () => {
     
     return [
         {
-            id: 1, title: 'Note title', body: 'lorem ipsum bla bla bla', color: 'rgb(255, 0, 110)'
+            id: 1, title: 'Note title', body: 'diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi', color: 'rgb(75, 85, 86)'
         },
         {
-            id: 2, title: 'Note title', body: 'lorem ipsum bla bla bla', color: 'rgb(131, 56, 236)'
+            id: 2, title: 'Note title', body: 'diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi', color: 'rgb(81, 17, 55)'
         },
         {
-            id: 3, title: 'Note title', body: 'lorem ipsum bla bla bla', color: 'rgb(251, 86, 7)'
+            id: 3, title: 'Note title', body: 'diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi', color: 'rgb(167, 48, 86)'
         },
         {
-            id: 4, title: 'Note title', body: 'lorem ipsum bla bla bla', color: 'rgb(243, 19, 19)'
+            id: 4, title: 'Note title', body: 'diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi', color: 'rgb(167, 48, 86)'
         },
         {
-            id: 5, title: 'Note title', body: 'lorem ipsum bla bla bla', color: 'rgb(255, 0, 110)'
+            id: 5, title: 'Note title', body: 'diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi', color: 'rgb(151, 61, 26)'
         },
     ]
 

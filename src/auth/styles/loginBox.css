@@ -42,6 +42,7 @@
 }
 
 .change-state-link{
-    color: blue;
+    color: rgb(167, 48, 86);
     cursor: pointer;
+    text-decoration: underline;
 }

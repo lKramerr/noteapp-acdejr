@@ -1,9 +1,9 @@
 body{
-    background-color: #3A86FF;
+    background-color: #CDBEAC;
 }
 
 .action-btn{
-    background-color: #3A86FF;
+    background-color: #CDBEAC;
     color: white;
     width: 85%;
     padding: 10px;
@@ -13,7 +13,7 @@ body{
 }
 
 .action-btn:hover{
-    background-color: #326ecf;
+    background-color: #b3a595;
 }
 
 .secondary-btn{
@@ -34,3 +34,15 @@ body{
 i{
     cursor: pointer;
 }
+
+/*
+    Old color palette
+    background: #3A86FF
+    button hover: #326ECF
+    notes: 
+        rgb(131, 56, 236)
+        rgb(255, 0, 110)
+        rgb(251, 86, 7)
+        rgb(243, 19, 19)
+
+*/
