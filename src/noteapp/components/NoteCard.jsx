@@ -1,13 +1,21 @@
+import { useDispatch } from "react-redux";
 import { colorsHandler } from "../../helpers/colorsHandler";
+import { setActiveNote } from "../../store/note/noteappSlice";
 
 
-export const NoteCard = ( { title, body, color } ) => {
+export const NoteCard = ( { id, title, body, color } ) => {
 
     const displayColor = colorsHandler( color );
+    const dispatch = useDispatch();
+
+    const onEditNote = () => {
+        // dispatch( changeHomeView() );
+        dispatch( setActiveNote( { id, title, body, color } ) );
+    };
 
     return (
 
-        <div className="col mt-4">
+        <div className="col mt-4" onClick={ onEditNote }>
         
             <div className={ "note-card purple " + displayColor} >
 

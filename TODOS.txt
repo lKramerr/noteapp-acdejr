@@ -1,0 +1,3 @@
+1. Visualizar notas en inicio
+2. Agregar opción para editar notas
+3. Agregar opción para eliminar notas

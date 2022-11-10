@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { colorsHandler } from '../../helpers/colorsHandler';
 import { useForm } from '../../hooks';
-import { startChangingHomeView, startCreatingNote } from '../../store/note/thunks';
+import { startChangingHomeView, startCreatingNote, startDeletingNote, startSavingNote } from '../../store/note/thunks';
 import { noteState } from '../states/noteState';
 
 import '../styles/noteWorkshop.css';
@@ -10,11 +9,11 @@ import '../styles/noteWorkshop.css';
 export const NoteWorkshop = () => {
 
     const dispatch = useDispatch();
-    const { isSaving } = useSelector( state => state.noteapp );
-    const { onInputChange, formState, setFormState, title, body, color } = useForm( noteState );
+
+    const { isSaving, active } = useSelector( state => state.noteapp );
+    const { onInputChange, formState, setFormState, title, body, color } = useForm( ( active ) ? active : noteState );
 
     const displayColor = colorsHandler( color ) ;
-    
     const onChangeColor = ( event ) => {
         
         const backgroundColor = event.target.style.backgroundColor;
@@ -23,20 +22,31 @@ export const NoteWorkshop = () => {
 
     };
 
-    console.log( displayColor );
-
     const onChangeHomeView = () => {
 
         dispatch( startChangingHomeView() );
 
     };
 
-    const onSendNote = async( event ) => {
+    const onNewNote = async( event ) => {
 
         event.preventDefault();
 
         dispatch( startCreatingNote( formState ) );
         dispatch( startChangingHomeView() );
+
+    };
+
+    const onSaveNote = async( event ) => {
+
+        event.preventDefault();
+        dispatch( startSavingNote( formState ) );
+
+    };
+
+    const onDeleteNote = async( event ) => {
+
+        dispatch( startDeletingNote() );
 
     };
 
@@ -47,7 +57,7 @@ export const NoteWorkshop = () => {
             <div className="d-flex justify-content-between mb-2">
 
                 <i className="bi bi-arrow-left fs-3 ms-1" onClick={ onChangeHomeView }></i>
-                <i className="bi bi-trash3 fs-3 ms-1"></i>
+                <i className="bi bi-trash3 fs-3 ms-1" onClick={ onDeleteNote }></i>
 
             </div>
         
@@ -80,7 +90,7 @@ export const NoteWorkshop = () => {
             <button
                 className={ "action-btn save-note " + displayColor }
                 disabled={ isSaving }
-                onClick={ onSendNote }
+                onClick={ ( active ) ? onSaveNote : onNewNote }
             >
                 Guardar
             </button>

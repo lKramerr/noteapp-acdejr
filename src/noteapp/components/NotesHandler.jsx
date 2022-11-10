@@ -13,7 +13,6 @@ export const NotesHandler = () => {
     const onLogout = () => dispatch( startLogOut() );
 
     const myNotes = useLoadNotes();
-    console.log( myNotes );
 
     return (
 
