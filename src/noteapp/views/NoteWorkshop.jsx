@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { callConfirmAlert } from '../../auth/views/alerts/error';
 import { colorsHandler } from '../../helpers/colorsHandler';
 import { useForm } from '../../hooks';
 import { startChangingHomeView, startCreatingNote, startDeletingNote, startSavingNote } from '../../store/note/thunks';
@@ -32,6 +33,9 @@ export const NoteWorkshop = () => {
 
         event.preventDefault();
 
+        formState.orderNumber = new Date().getTime();
+        formState.creationDate = new Date().toUTCString();
+
         dispatch( startCreatingNote( formState ) );
         dispatch( startChangingHomeView() );
 
@@ -40,13 +44,21 @@ export const NoteWorkshop = () => {
     const onSaveNote = async( event ) => {
 
         event.preventDefault();
+
+        formState.orderNumber = new Date().getTime();
+        formState.creationDate = new Date().toUTCString();
+
         dispatch( startSavingNote( formState ) );
 
     };
 
-    const onDeleteNote = async( event ) => {
+    const onDeleteNote = async() => {
 
-        dispatch( startDeletingNote() );
+        const result = await callConfirmAlert('¿Está seguro de que desea elimiar esta nota?');
+
+        console.log( 'im this false', result );
+
+        if ( result ) dispatch( startDeletingNote() );
 
     };
 
@@ -57,7 +69,7 @@ export const NoteWorkshop = () => {
             <div className="d-flex justify-content-between mb-2">
 
                 <i className="bi bi-arrow-left fs-3 ms-1" onClick={ onChangeHomeView }></i>
-                <i className="bi bi-trash3 fs-3 ms-1" onClick={ onDeleteNote }></i>
+                <i className="bi bi-trash3 fs-3 ms-1" onClick={ onDeleteNote } hidden={ ( active ) ? false : true }></i>
 
             </div>
         

@@ -2,6 +2,7 @@ import { async } from "@firebase/util";
 import { signOut } from "firebase/auth";
 import { FirebaseAuth } from "../../firebase/config";
 import { logInUserWithEmailAndPassword, registerUserWithEmailAndPassword } from "../../firebase/providers";
+import { cleanNotes } from "../note/noteappSlice";
 import { changeAuthView, logIn, logOut } from "./authSlice";
 
 export const startChangingAuthView = () => {
@@ -43,6 +44,7 @@ export const startLogOut = () => {
     return async( dispatch ) => {
         await signOut( FirebaseAuth );
         dispatch( logOut() );
+        dispatch( cleanNotes() );
     }
 
 };

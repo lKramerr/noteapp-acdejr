@@ -3,6 +3,7 @@ import { doc, collection, setDoc, deleteDoc } from 'firebase/firestore/lite';
 
 import { CloudFirebase } from '../../firebase/config';
 import { loadNotes } from '../../helpers/loadNotes';
+import { callConfirmAlert } from '../../auth/views/alerts/error';
 
 export const startChangingHomeView = () => {
 
@@ -41,8 +42,6 @@ export const startSavingNote = ( formState ) => {
         const noteToFireStore = { ...formState };
         delete noteToFireStore.id;
 
-        console.log( noteToFireStore );
-
         const docRef = doc( CloudFirebase, `${ uid }/noteapp/notes/${ formState.id }` );
         await setDoc( docRef, noteToFireStore, { merge: true } );
 
@@ -58,6 +57,10 @@ export const startLoadingNotes = () => {
 
         const { uid } = getState().auth;
         const notes = await loadNotes( uid );
+
+        notes.sort(
+            ( a, b ) => b.orderNumber - a.orderNumber
+        );
 
         dispatch( setNotes( notes ) );
 

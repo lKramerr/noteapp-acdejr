@@ -44,8 +44,11 @@ export const noteappSlice = createSlice({
         deleteNoteById: ( state, { payload } ) => {
             state.notes = state.notes.filter( note => note.id !== payload.id );
         },
+        cleanNotes: ( state ) => {
+            state.notes = [];
+        }
     }
 });
 
 
-export const { changeHomeView, savingNote, noteSaved, setNotes, setActiveNote, setUnActiveNote, updateNote, deleteNoteById } = noteappSlice.actions;
+export const { changeHomeView, savingNote, noteSaved, setNotes, setActiveNote, setUnActiveNote, updateNote, deleteNoteById, cleanNotes } = noteappSlice.actions;
