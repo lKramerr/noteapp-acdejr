@@ -7,9 +7,9 @@ export const NoteAppRoutes = () => {
 
         <Routes>
 
-            <Route path="/" element={ <Home /> }/>
+            <Route path="/noteapp-acdejr/" element={ <Home /> }/>
 
-            <Route path="/*" element={ <Navigate to="/" /> } /> 
+            <Route path="/noteapp-acdejr/*" element={ <Navigate to="/noteapp-acdejr/" /> } /> 
 
         </Routes>
 
