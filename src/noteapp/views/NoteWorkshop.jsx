@@ -89,7 +89,7 @@ export const NoteWorkshop = () => {
                 onChange={ onInputChange }
                 placeholder="Entonces..."
                 className="note-form"
-                rows={ 16 }
+                rows={ 15 }
             />
 
             <div>

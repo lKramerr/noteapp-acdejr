@@ -17,8 +17,15 @@ export const notesNewProperties = ( title, body, creationDate ) => {
     } );
 
     const newDate = useMemo( () => {
+
         const dateToFormat = new Date( creationDate );
-        return dateToFormat.getDate().toString() + ' - ' + dateToFormat.getMonth() + ' - ' + dateToFormat.getFullYear();
+
+        const day = dateToFormat.getDate().toString();
+        const month = dateToFormat.getMonth() + 1;
+        const year = dateToFormat.getFullYear();
+
+        return day + ' - ' + month + ' - ' + year;
+        
     } );
 
     return {

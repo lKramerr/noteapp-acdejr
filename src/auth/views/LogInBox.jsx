@@ -47,6 +47,7 @@ export const LogInBox = () => {
                     name="email"
                     value={ email }
                     onChange={ onInputChange }
+                    autoComplete="off"
                     className="form-input mb-4 mt-2"
                 />
 

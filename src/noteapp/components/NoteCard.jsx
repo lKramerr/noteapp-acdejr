@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { colorsHandler } from "../../helpers/colorsHandler";
 import { notesNewProperties } from "../../helpers/notesNewProperties";
@@ -10,7 +9,6 @@ export const NoteCard = ( { id, title, body, color, creationDate } ) => {
     const dispatch = useDispatch();
 
     const onEditNote = () => {
-        // dispatch( changeHomeView() );
         dispatch( setActiveNote( { id, title, body, color } ) );
     };
 
