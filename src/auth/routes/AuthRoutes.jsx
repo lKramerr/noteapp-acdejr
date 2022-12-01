@@ -7,9 +7,9 @@ export const AuthRoutes = () => {
 
         <Routes>
         
-            <Route path="/noteapp-acdejr/" element={ <AuthPage /> }/>
+            <Route path="/" element={ <AuthPage /> }/>
             
-            <Route path="/noteapp-acdejr/*" element={ <Navigate to="/noteapp-acdejr/auth" /> }/>
+            <Route path="/*" element={ <Navigate to="/auth" /> }/>
         
         </Routes>
 
